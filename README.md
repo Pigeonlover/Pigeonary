@@ -1,16 +1,55 @@
-# React + Vite
+## Pigeonary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# What is it?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A fun and educational site to learn about some of the pigeon breeds that exist out there. You can also add comments for each breed to interact with the wider pigeon enthusiast community!
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# Organising the project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+DAY ONE
+
+- Morning
+  Finalise the plan for the site.
+  Set up the monorepo and GitHub repo.
+  Create the database tables.
+
+- Afternoon
+  Create the site structure: Home, Discover, About Us.
+  Fetch data from the database and display on the Discover page.
+  Create form.
+
+---
+
+DAY TWO
+
+- Morning
+  Form submission sends data to databse.
+  Connect comments to each pigeon breed.
+  Add a 'Next' button and add its functionality.
+
+- Afternoon
+  Start on styling (make sure it's responsive).
+  Check accessibility features.
+
+---
+
+DAY THREE
+
+- Morning
+  I'll probably still be asleep.
+
+- Afternoon
+  Finalise styling.
+  Finish writing the project's README.md file.
+
+---
+
+---
