@@ -1,16 +1,38 @@
 //
 
+import { useEffect, useState } from "react";
+
 export default function DiscoverPage() {
+  const [pigeonBreeds, setPigeonBreeds] = useState(null);
+
+  useEffect(() => {
+    async function getPigeonBreedsData() {
+      try {
+        const response = await fetch(
+          "http://localhost:8080/pigeon-breeds/random"
+        );
+        const data = await response.json();
+        setPigeonBreeds(data);
+      } catch (error) {
+        console.error("Pigeon data failed to be retrieved!", error);
+      }
+    }
+    getPigeonBreedsData();
+  }, []);
+
+  if (!pigeonBreeds) {
+    return <p>Loading pigeon breed...</p>;
+  }
+
   return (
-    <>
-      <h1>This is the Discover Page!</h1>
-      <p>Here will be the main part of the site.</p>
-      <p>
-        When the user first opens this page, a breed will be chosen from the
-        database at random and show here. There will be a section next to it
-        showing any comments on that specific breed entry. Finally, there will
-        be a form for users to add new comments.
-      </p>
-    </>
+    <div>
+      <div>
+        <img src={pigeonBreeds.breedlink} alt={pigeonBreeds.breedalt} />
+      </div>
+      <div>
+        <h3>{pigeonBreeds.breedname}</h3>
+        <p>{pigeonBreeds.breeddescription}</p>
+      </div>
+    </div>
   );
 }
