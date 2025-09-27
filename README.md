@@ -16,14 +16,14 @@ A fun and educational site to learn about some of the existing pigeon breeds in 
 
 DAY ONE
 
-**Morning**
-✦ Finalise the plan for the site. ✔️ (26/09/2025)
-✦ Set up the monorepo and GitHub repo. ✔️ (26/09/2025)
+**Morning** <br>
+✦ Finalise the plan for the site. ✔️ (26/09/2025) <br>
+✦ Set up the monorepo and GitHub repo. ✔️ (26/09/2025) <br>
 ✦ Create the database tables. ✔️ (26/09/2025)
 
-**Afternoon**
-✦ Create the site structure: Home, Discover, About Us. ✔️ (26/09/2025)
-✦ Set up server route for random fetching. ✔️ (26/09/2025)
+**Afternoon** <br>
+✦ Create the site structure: Home, Discover, About Us. ✔️ (26/09/2025) <br>
+✦ Set up server route for random fetching. ✔️ (26/09/2025) <br>
 ✦ Fetch data from the database and display on the Discover page. ✔️ (26/09/2025)
 ✦ Create form.
 
@@ -31,25 +31,25 @@ DAY ONE
 
 DAY TWO
 
-**Morning**
+**Morning** <br>
 ✦ Form submission sends data to database - each comment to its specific breed.
-✦ Connect comments to each pigeon breed. ✔️ (26/09/2025)
-✦ Add a 'New Breed' button and add its functionality. ✔️ (26/09/2025)
+✦ Connect comments to each pigeon breed. ✔️ (26/09/2025) <br>
+✦ Add a 'New Breed' button and add its functionality. ✔️ (26/09/2025) <br>
 
-**Afternoon**
-✦ Comments show for each specific breed. ✔️ (27/09/2025)
-✦ Start on styling (make sure it's responsive).
+**Afternoon** <br>
+✦ Comments show for each specific breed. ✔️ (27/09/2025) <br>
+✦ Start on styling (make sure it's responsive). <br>
 ✦ Check accessibility features.
 
 ---
 
 DAY THREE
 
-**Morning**
+**Morning** <br>
 ✦ I'll probably still be asleep.
 
-**Afternoon**
-✦ Finalise styling.
+**Afternoon** <br>
+✦ Finalise styling. <br>
 ✦ Finish writing the project's README.md file.
 
 ---
