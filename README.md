@@ -32,7 +32,7 @@ DAY ONE
 DAY TWO
 
 **Morning** <br>
-✦ Form submission sends data to database - each comment to its specific breed.
+✦ Form submission sends data to database - each comment to its specific breed. <br>
 ✦ Connect comments to each pigeon breed. ✔️ (26/09/2025) <br>
 ✦ Add a 'New Breed' button and add its functionality. ✔️ (26/09/2025) <br>
 
