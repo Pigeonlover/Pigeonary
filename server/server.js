@@ -72,3 +72,23 @@ app.get("/comments/:breedId", async (request, response) => {
     response.status(500).json({ success: false });
   }
 });
+
+// Route to POST new comments
+app.post("/post-comment", async (request, response) => {
+  const { username, comment, breedId } = request.body;
+
+  try {
+    const data = await db.query(
+      `INSERT INTO pigeoncomments (username, comment, pigeonBreed_id) 
+       VALUES ($1, $2, $3) 
+       RETURNING username, comment, created_at;`,
+      [username, comment, breedId]
+      // Returns new row immediately - helps with new comments showing straightaway without having to refresh.
+    );
+
+    response.json(data.rows[0]);
+  } catch (error) {
+    console.error("Fatal: comment could not be added!", error);
+    response.status(500).json({ success: false });
+  }
+});

@@ -1,5 +1,5 @@
 import "./App.css";
-import "./pages/DiscoverPage.css";
+
 import { Routes, Route } from "react-router";
 
 import Navbar from "./components/Navbar";

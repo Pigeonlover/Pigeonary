@@ -1,12 +1,14 @@
 //
-import "./DiscoverPage.css";
+
 import Comments from "../components/Comments";
+import AddCommentForm from "../components/AddCommentForm";
 
 import { useEffect, useState } from "react";
 
 export default function DiscoverPage() {
   const [pigeonBreeds, setPigeonBreeds] = useState(null);
-  const [refreshComments, setRefreshComments] = useState(false);
+  const [refreshComments] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     let ignore = false;
