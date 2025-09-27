@@ -1,4 +1,5 @@
 import "./App.css";
+import "./pages/DiscoverPage.css";
 import { Routes, Route } from "react-router";
 
 import Navbar from "./components/Navbar";
@@ -10,7 +11,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    <main>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -19,6 +20,6 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </>
+    </main>
   );
 }

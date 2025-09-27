@@ -41,17 +41,34 @@ app.get("/pigeon-breeds", async (_, response) => {
   }
 });
 
-// Route to fetch ONE random entry from the pigeonBreeds table.
+// Route to fetch ONE random entry from the pigeonBreeds table, for the Discover page.
 app.get("/pigeon-breeds/random", async (_, response) => {
   // Error handling with 'try ... catch'
   try {
     const data = await db.query(
-      `SELECT breedName, breedLink, breedDescription, breedAlt FROM pigeonBreeds ORDER BY RANDOM() LIMIT 1;`
+      `SELECT id, breedName, breedLink, breedDescription, breedAlt FROM pigeonBreeds ORDER BY RANDOM() LIMIT 1;`
     );
     // Wrangling the data
     response.json(data.rows[0]);
   } catch (error) {
     console.error("Fatal: random pigeon could not be retrieved!", error);
+    response.status(500).json({ success: false });
+  }
+});
+
+// Route to fetch coments for each specific breed shown.
+app.get("/comments/:breedId", async (request, response) => {
+  const { breedId } = request.params;
+
+  try {
+    const data = await db.query(
+      `SELECT id, username, comment, created_at FROM pigeoncomments WHERE pigeonBreed_id = $1;`,
+      [breedId]
+    );
+
+    response.json(data.rows);
+  } catch (error) {
+    console.error("Fatal: comments could not be retrieved!", error);
     response.status(500).json({ success: false });
   }
 });
