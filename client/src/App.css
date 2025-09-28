@@ -5,3 +5,115 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+main {
+  height: 100vh;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 5fr 0.2fr;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  background-color: #0d1321ff;
+  color: white;
+
+  height: clamp(80px, 100px, 120px);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  margin: 8px;
+}
+
+nav a {
+  border: 1px solid #f0ebd8ff;
+  border-radius: 10px;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+nav a:hover {
+  background-color: #748cabff;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.main-content {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+button {
+  font-weight: bold;
+  width: 40%;
+  background-color: #1d2d44ff;
+  color: white;
+
+  border-radius: 10px;
+  padding: 5px;
+  margin: 4px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+button:hover {
+  transition-duration: 0.5s;
+  cursor: pointer;
+  background-color: #748cabff;
+  color: black;
+}
+
+.cancel-button {
+  background-color: rgb(161, 0, 0);
+}
+.cancel-button:hover {
+  background-color: rgb(211, 102, 102);
+}
+.comments-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  background-color: #0d1321ff;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+}
+
+/* --rich-black: ; #0d1321ff
+--prussian-blue: #1d2d44ff;
+--paynes-gray: #3e5c76ff;
+--silver-lake-blue: #748cabff;
+--eggshell: #f0ebd8ff; */

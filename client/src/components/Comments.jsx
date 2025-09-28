@@ -1,4 +1,6 @@
 //
+import "../App.css";
+
 import { useEffect, useState } from "react";
 
 export default function Comments({ breedId, refreshComments }) {
@@ -21,13 +23,19 @@ export default function Comments({ breedId, refreshComments }) {
   }, [breedId, refreshComments]);
 
   return (
-    <div className="comments-area">
-      <div className="comments-container">
+    <div className="comments-area flex flex-col">
+      <h1 className="font-bold text-xl">Comments</h1>
+      <div className="comment-container">
         {comments.length > 0 ? (
           comments.map((comment) => (
-            <div key={comment.id} className="comment-item">
-              <p>{comment.username}</p>
-              <p>{new Date(comment.created_at).toLocaleDateString()}</p>
+            <div
+              key={comment.id}
+              className="bg-[#f0ebd8ff] text-[#0d1321ff] rounded-lg shadow-md p-4 mb-4 w-full max-w-md"
+            >
+              <p className="font-bold">👤 {comment.username}</p>
+              <p className="italic text-xs">
+                {new Date(comment.created_at).toLocaleDateString()}
+              </p>
               <p>{comment.comment}</p>
             </div>
           ))
