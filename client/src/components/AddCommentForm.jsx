@@ -15,7 +15,7 @@ export default function AddCommentForm({ breedId, onSubmit, onClose }) {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SERVER_LINK}post-comment`,
+        `${import.meta.env.VITE_SERVER_LINK}/post-comment`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

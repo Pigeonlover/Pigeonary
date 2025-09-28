@@ -10,7 +10,7 @@ export default function Comments({ breedId, refreshComments }) {
     async function fetchComments() {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_SERVER_LINK}${breedId}`
+          `${import.meta.env.VITE_SERVER_LINK}/comments/${breedId}`
         );
         const data = await response.json();
         setComments(data);
