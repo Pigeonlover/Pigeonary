@@ -17,7 +17,7 @@ export default function DiscoverPage() {
     async function getPigeonBreedsData() {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_SERVER_LINK}/random`
+          `${import.meta.env.VITE_SERVER_LINK}/pigeon-breeds/random`
         );
         if (!ignore) {
           const data = await response.json();
@@ -37,7 +37,7 @@ export default function DiscoverPage() {
   async function getPigeonBreedsData() {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SERVER_LINK}/random`
+        `${import.meta.env.VITE_SERVER_LINK}/pigeon-breeds/random`
       );
       const data = await response.json();
       setPigeonBreeds(data);
