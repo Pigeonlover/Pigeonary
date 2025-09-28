@@ -12,6 +12,7 @@ export default function DiscoverPage() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
+    // ignore used for stopping useEffect from firing twice
     let ignore = false;
 
     async function getPigeonBreedsData() {
@@ -34,6 +35,7 @@ export default function DiscoverPage() {
     };
   }, []);
 
+  // Yes, this function is a copy-paste of the useEffect... It is used for later!
   async function getPigeonBreedsData() {
     try {
       const response = await fetch(
@@ -54,6 +56,7 @@ export default function DiscoverPage() {
     <div className="main-content">
       <div className="flex items-center flex-row flex-wrap w-2/3 m-8">
         <div className="basis-1/2 flex flex-col justify-center items-center p-3">
+          {/* Function is used here so users can just get a new breed without needing to refresh the page! */}
           <button className="basis-1/8" onClick={getPigeonBreedsData}>
             Show Me A New Breed
           </button>
@@ -81,6 +84,7 @@ export default function DiscoverPage() {
             />
           </div>
 
+          {/* State is updated on button click so that the form appears */}
           <button
             className="add-comment-button"
             onClick={() => setShowForm(true)}
@@ -91,6 +95,7 @@ export default function DiscoverPage() {
             <AddCommentForm
               breedId={pigeonBreeds.id}
               onClose={() => setShowForm(false)}
+              // When a new comment is submitted, the comments get refreshed so the new comment appears immediately, and the form is then closed.
               onSubmit={() => {
                 setRefreshComments((prev) => !prev);
                 setShowForm(false);

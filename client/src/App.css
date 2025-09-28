@@ -1,3 +1,7 @@
+/* */
+
+/* I ended up not using the mini reset because it seemed to be messing up my styling :/ */
+
 /* @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"); */
 @import "tailwindcss";
 
@@ -51,6 +55,7 @@ nav a:hover {
   transition: background-color 0.3s ease;
 }
 
+/* This is everything between the header/navbar and the footer. */
 .main-content {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -86,6 +91,7 @@ button:hover {
   color: black;
 }
 
+/* The cancel button in the form for adding new comments. */
 .cancel-button {
   background-color: rgb(161, 0, 0);
 }
@@ -111,9 +117,3 @@ button:hover {
   justify-content: center;
   padding: 4px;
 }
-
-/* --rich-black: ; #0d1321ff
---prussian-blue: #1d2d44ff;
---paynes-gray: #3e5c76ff;
---silver-lake-blue: #748cabff;
---eggshell: #f0ebd8ff; */

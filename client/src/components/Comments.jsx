@@ -11,7 +11,7 @@ export default function Comments({ breedId, refreshComments }) {
       try {
         const response = await fetch(
           `${import.meta.env.VITE_SERVER_LINK}/comments/${breedId}`
-        );
+        ); // Took me some tries to get the link correct lol
         const data = await response.json();
         setComments(data);
       } catch (error) {
@@ -40,6 +40,7 @@ export default function Comments({ breedId, refreshComments }) {
             </div>
           ))
         ) : (
+          // If there are no comments, this is shown instead :)
           <p>
             There are no comments here yet. Be the first to write about this
             beautiful pigeon breed!

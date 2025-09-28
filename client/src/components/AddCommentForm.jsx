@@ -9,6 +9,7 @@ export default function AddCommentForm({ breedId, onSubmit, onClose }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    // Any unwanted spaces at the start and end of inputted text are deleted with trim()
     if (!username.trim() || !comment.trim()) return;
 
     setLoading(true);
@@ -36,7 +37,7 @@ export default function AddCommentForm({ breedId, onSubmit, onClose }) {
     } catch (error) {
       console.error("Error posting comment:", error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Before the code exits the block, it sets this state
     }
   }
 
@@ -66,6 +67,7 @@ export default function AddCommentForm({ breedId, onSubmit, onClose }) {
               Cancel
             </button>
             <button type="submit" className="" disabled={loading}>
+              {/* Trying to catch any possibilities that might happen ;v; */}
               {loading ? "Posting..." : "Submit"}
             </button>
           </div>
