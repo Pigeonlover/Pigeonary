@@ -1,7 +1,7 @@
 //
 import { useEffect, useState } from "react";
 
-export default function Comments({ breedId }) {
+export default function Comments({ breedId, refreshComments }) {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Comments({ breedId }) {
     }
 
     fetchComments();
-  }, [breedId]);
+  }, [breedId, refreshComments]);
 
   return (
     <div className="comments-area">
@@ -26,10 +26,8 @@ export default function Comments({ breedId }) {
         {comments.length > 0 ? (
           comments.map((comment) => (
             <div key={comment.id} className="comment-item">
-              <p>
-                {comment.username}
-                <p>{new Date(comment.created_at).toLocaleString()}</p>
-              </p>
+              <p>{comment.username}</p>
+              <p>{new Date(comment.created_at).toLocaleDateString()}</p>
               <p>{comment.comment}</p>
             </div>
           ))

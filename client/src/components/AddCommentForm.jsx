@@ -1,15 +1,14 @@
 //
-
 import { useState } from "react";
 
-export default function AddCommentForm({ breedId, setComments, setShowModal }) {
+export default function AddCommentForm({ breedId, onSubmit, onClose }) {
   const [username, setUsername] = useState("");
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!username.trim() || !comment.trim()) return; // basic validation
+    if (!username.trim() || !comment.trim()) return;
 
     setLoading(true);
 
@@ -22,15 +21,14 @@ export default function AddCommentForm({ breedId, setComments, setShowModal }) {
 
       if (!response.ok) throw new Error("Failed to post comment");
 
-      const newComment = await response.json();
+      await response.json();
 
-      // Add the new comment to the list in parent component
-      setComments((prevComments) => [...prevComments, newComment]);
+      // Tell parent to refresh comments and close modal
+      onSubmit();
 
-      // Reset and close
+      // Reset form
       setUsername("");
       setComment("");
-      setShowModal(false);
     } catch (error) {
       console.error("Error posting comment:", error);
     } finally {
@@ -62,7 +60,7 @@ export default function AddCommentForm({ breedId, setComments, setShowModal }) {
           <div className="flex justify-end gap-2 mt-3">
             <button
               type="button"
-              onClick={() => setShowModal(false)}
+              onClick={onClose}
               className="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400"
             >
               Cancel

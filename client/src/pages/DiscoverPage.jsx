@@ -1,13 +1,13 @@
 //
 
 import Comments from "../components/Comments";
-import AddCommentForm from "../components/AddCommentForm";
+import AddCommentForm from "../components/AddCommentForm.jsx";
 
 import { useEffect, useState } from "react";
 
 export default function DiscoverPage() {
   const [pigeonBreeds, setPigeonBreeds] = useState(null);
-  const [refreshComments] = useState(false);
+  const [refreshComments, setRefreshComments] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
@@ -50,23 +50,46 @@ export default function DiscoverPage() {
   }
 
   return (
-    <div className="pigeon-breed-container">
-      <div className="pigeon-area">
-        <button className="new-breed-button" onClick={getPigeonBreedsData}>
+    <div className="flex items-center flex-row flex-wrap">
+      <div className="basis-1/2 flex flex-col">
+        <button className="basis-1/8" onClick={getPigeonBreedsData}>
           Show Me A New Breed
         </button>
-        <div className="pigeon-image-container">
-          <img src={pigeonBreeds.breedlink} alt={pigeonBreeds.breedalt} />
+        <div className="basis-5/8">
+          <img
+            src={pigeonBreeds.breedlink}
+            alt={pigeonBreeds.breedalt}
+            className="aspect-1/1 object-cover"
+          />
         </div>
-        <div className="pigeon-text-container">
+        <div className="basis-2/8">
           <h3>{pigeonBreeds.breedname}</h3>
           <p>{pigeonBreeds.breeddescription}</p>
         </div>
       </div>
 
-      <div className="comments-area">
-        <Comments breedId={pigeonBreeds.id} key={refreshComments} />
-        <button className="add-comment-button">Add A Comment</button>
+      <div className="basis-1/2">
+        <Comments
+          breedId={pigeonBreeds.id}
+          key={refreshComments}
+          refreshComments={refreshComments}
+        />
+        <button
+          className="add-comment-button"
+          onClick={() => setShowForm(true)}
+        >
+          Add A Comment
+        </button>
+        {showForm && (
+          <AddCommentForm
+            breedId={pigeonBreeds.id}
+            onClose={() => setShowForm(false)}
+            onSubmit={() => {
+              setRefreshComments((prev) => !prev);
+              setShowForm(false);
+            }}
+          />
+        )}
       </div>
     </div>
   );
