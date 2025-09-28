@@ -14,20 +14,23 @@ export default function AddCommentForm({ breedId, onSubmit, onClose }) {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/post-comment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, comment, breedId }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_LINK}post-comment`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, comment, breedId }),
+        }
+      );
 
       if (!response.ok) throw new Error("Failed to post comment");
 
       await response.json();
 
-      // Tell parent to refresh comments and close modal
+      // Pop-up closes
       onSubmit();
 
-      // Reset form
+      // Reset the form
       setUsername("");
       setComment("");
     } catch (error) {
