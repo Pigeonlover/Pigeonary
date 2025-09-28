@@ -77,6 +77,8 @@ DAY THREE
 - Not necessarily unhappy, but the React logic was a big beast in this assignment. There was a lot of tries, deleting things, moving them around... Props for the form and comments became my nemesis. In the end I managed to make everything work, but it was very hard work. At least now I know what to do if I need to make something similar in the future, right...?
 - I've usually never had massive issues with Render, but this time a couple of hours were spent on trying to sort out failed deployment and error codes. In the end it was `.env` issues (I think...), but managed to resolve it in the end. I also think the closer to the deadline I am, the stupider mistakes I make. I need to make sure I stay calm and collected :)
 - Render again: my custom-made 404 Page does not show!!! So frustrating. I tried finding and implementing solutions from the internet, but nothing has worked yet (you will see some random code in vite.config.js and a stray file that I don't think does anything, really...). I'd love a solution to that because currently it is the main thing that's left me disappointed.
+  EDIT at 9:38pm: I GOT IT TO WORK!! A friend linked me to the right Render docs place and basically I just had to add a redirection rule on the project's dadhboard in Render. Yayyyy --> https://render.com/docs/redirects-rewrites#wildcards
+  
 
 ---
 
