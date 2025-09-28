@@ -1,5 +1,6 @@
 //
 import "../App.css";
+import { Link } from "react-router";
 
 export default function AboutPage() {
   return (
@@ -19,7 +20,7 @@ export default function AboutPage() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="/discover"
+            path="/discover"
             className="bg-[#1d2d44ff] text-white font-bold py-2 px-4 rounded hover:bg-[#748cabff] hover:text-black transition duration-300"
           >
             Discover Pigeon Breeds

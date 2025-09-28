@@ -1,5 +1,6 @@
 //
 import "../App.css";
+import { Link } from "react-router";
 
 export default function HomePage() {
   return (
@@ -21,12 +22,13 @@ export default function HomePage() {
             Explore rare pigeon breeds, uncover their histories, and find your
             next feathered fascination.
           </p>
-          <a
-            href="/discover"
+
+          <Link
+            to={"/discover"}
             className="bg-[#1d2d44ff] text-white font-bold py-2 px-4 rounded hover:bg-[#748cabff] hover:text-black transition duration-300"
           >
             Discover Pigeon Breeds
-          </a>
+          </Link>
         </div>
       </div>
     </section>
